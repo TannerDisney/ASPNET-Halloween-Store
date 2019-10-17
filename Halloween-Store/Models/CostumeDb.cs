@@ -32,9 +32,11 @@ namespace Halloween_Store.Models
             return c;
         }
 
-        public static Task UpdateCostume(Costume costume, ApplicationDbContext context)
+        public static async Task<Costume> UpdateCostume(Costume costume, ApplicationDbContext context)
         {
-            throw new NotImplementedException();
+            context.Update(costume);
+            await context.SaveChangesAsync();
+            return costume;
         }
     }
 }
