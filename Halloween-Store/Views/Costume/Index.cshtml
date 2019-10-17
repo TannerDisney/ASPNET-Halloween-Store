@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Halloween_Store.Models.Costume>
+
+@{
+    ViewData["Title"] = "Costumes";
+}
+
+<h1>Viewing Costumes</h1>
+<table class="table table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CostumeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostumeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Price)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostumeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostumeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+<p><a asp-action="Add" asp-controller="Costume">Add Costume</a></p>
