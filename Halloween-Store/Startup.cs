@@ -37,7 +37,7 @@ namespace Halloween_Store
 
             // Register Db Context
             string connection = Configuration.GetConnectionString("DefaultConnection");
-            services.AddDbContext<StoreContext>(options => options.UseSqlServer(connection));
+            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connection));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -39,12 +39,6 @@ namespace Halloween_Store.Models
         public string Description { get; set; }
 
         /// <summary>
-        /// The Image of the Costume
-        /// </summary>
-        [Required]
-        public Byte[] CostumeImage { get; set; }
-
-        /// <summary>
         /// The Price of the Costume
         /// </summary>
         [Range(0.01, 999.99)]
