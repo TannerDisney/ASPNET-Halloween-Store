@@ -57,5 +57,20 @@ namespace Halloween_Store.Controllers
 
             return View(costume);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            Costume costume = await CostumeDb.GetCostumeById(id, context);
+
+            return View(costume);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            await CostumeDb.DeleteCostumeById(id, context);
+            return RedirectToAction("Index");
+        }
     }
 }

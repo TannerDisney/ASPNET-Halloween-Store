@@ -38,5 +38,18 @@ namespace Halloween_Store.Models
             await context.SaveChangesAsync();
             return costume;
         }
+
+        public static async Task DeleteCostumeById(int id, ApplicationDbContext context)
+        {
+            Costume c = new Costume()
+            {
+                CostumeId = id
+            };
+
+            context.Entry(c).State = EntityState.Deleted;
+            await context.SaveChangesAsync();
+
+            
+        }
     }
 }
