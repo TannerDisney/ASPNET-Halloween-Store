@@ -15,6 +15,7 @@ namespace Halloween_Store.Models
         /// Auto Incrementing Identification for Costumes
         /// </summary>
         [Key]
+        [Display(Name = "Costume Id")]
         public int CostumeId { get; set; }
 
         /// <summary>
@@ -22,6 +23,7 @@ namespace Halloween_Store.Models
         /// </summary>
         [Required]
         [StringLength(50)]
+        [Display(Name = "Costume Name")]
         public string CostumeName { get; set; }
 
         /// <summary>
